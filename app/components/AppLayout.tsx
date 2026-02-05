@@ -9,6 +9,8 @@ import { MobileTOC } from './MobileTOC';
 import { Breadcrumbs } from './Breadcrumbs';
 import { MinecraftStatus } from './MinecraftStatus';
 import { Search } from './Search';
+import { ArticleNavigation } from './ArticleNavigation';
+import { NewYearTheme } from './NewYearTheme';
 
 function DiscordIcon({ className }: { className?: string }) {
   return (
@@ -21,6 +23,9 @@ function DiscordIcon({ className }: { className?: string }) {
 export function AppLayout({ children }: { children: React.ReactNode }) {
   return (
     <div className="min-h-screen flex flex-col overflow-x-hidden bg-white dark:bg-gray-950">
+      {/* Новогодняя тема - гирлянда поверх шапки */}
+      <NewYearTheme />
+      
       {/* Header */}
       <header className="fixed top-0 left-0 right-0 z-40 h-24 flex items-center px-4 lg:px-8 bg-white/95 dark:bg-gray-950/95 backdrop-blur-md border-b border-gray-200 dark:border-gray-800">
         <div className="w-80 shrink-0 flex items-center">
@@ -70,6 +75,7 @@ export function AppLayout({ children }: { children: React.ReactNode }) {
               <div className="mdx-content">
                 {children}
               </div>
+              <ArticleNavigation />
             </div>
           </div>
         </main>
@@ -79,7 +85,7 @@ export function AppLayout({ children }: { children: React.ReactNode }) {
         </aside>
       </div>
 
-      {/* Footer - вынесен из main, центрируется относительно всего экрана */}
+      {/* Footer */}
       <footer className="border-t border-gray-200 dark:border-gray-800 py-6">
         <div className="text-center text-sm text-gray-500 dark:text-gray-400">
           © 2026 Africa RP. Все права защищены.

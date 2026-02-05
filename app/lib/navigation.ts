@@ -5,6 +5,7 @@ import {
   Stone,
   Pickaxe,
   Info,
+  BookAlert,
   LucideIcon // Импортируем тип для TypeScript
 } from 'lucide-react';
 
@@ -20,6 +21,11 @@ export const navigation: NavItem[] = [
     title: 'Главная',
     href: '/',
     icon: Home, // <-- Передаем как компонент (без кавычек)
+  },
+  {
+    title: 'Правила',
+    href: '/rules',
+    icon: BookAlert, // <-- Теперь это работает сразу
   },
   {
     title: 'Первые шаги',
